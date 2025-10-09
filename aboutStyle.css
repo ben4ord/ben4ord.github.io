@@ -130,6 +130,7 @@ html, body {
   background-color: #f0f0f0;
   border: 1px solid #ccc;
   overflow: hidden;
+  border-radius: 20px;
 }
 
 .center-line {
@@ -157,6 +158,7 @@ html, body {
 
 .right-image, .left-image {
   width: 48%;
+  
 }
 
 .right-image img, .left-image img {
@@ -164,7 +166,14 @@ html, body {
   height: auto;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
 }
+
+.left-image img {
+
+  margin: auto;
+}
+
 
 .year h1 {
   margin: 0;
