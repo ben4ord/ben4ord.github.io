@@ -164,7 +164,7 @@ html, body {
 .right-image img, .left-image img {
   width: 100%;
   height: auto;
-  object-fit: cover;
+  
   display: block;
   border-radius: 10px;
 }

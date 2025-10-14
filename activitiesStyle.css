@@ -137,66 +137,44 @@ html, body {
 .object {
   position: relative;
   width: 40%;
-  height: 50vh;
+  height: 70vh;
   margin: 50px auto;
-  padding: 20px;
+  /* padding: 20px; */
   background-color: #ffffff;
   border: 1px solid #ccc;
   overflow: hidden;
   border-radius: 20px;
+  justify-content: center;
+  place-items: center;
   
 }
 
 
 .object-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   align-items: flex-start;
 }
 
-.object-img {
-  object-fit: contain;
-  width: 100%;
-  height: 50%;
-  
-}
 
 .object-img img {
-  display: block;
-  margin: auto;
-  width: 50%;
-  
-}
-.left-side,.right-side {
-  width: 48%;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.right-image, .left-image {
-  width: 48%;
-  
-}
-
-.right-image img, .left-image img {
-  width: 100%;
+  width:100%;
   height: auto;
-  object-fit: cover;
-  display: block;
-  border-radius: 10px;
+  
 }
 
-.left-image img {
-
-  margin: auto;
+.objectText{
+  padding: 10px;
+  font-size:15px ;
+  text-align: left;
 }
 
-
-.year h1 {
-  margin: 0;
+.activitiesButton{
+  margin: 1 1 auto;
 }
-/* Footer Styling */
+
+/* === Footer Content === */
 .site-footer {
   background-color: #000;
   color: #fff;
