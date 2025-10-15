@@ -1,0 +1,174 @@
+Gunnison Home Assocation Web App Notes 
+
+1. Critical funders of retirement home. Far side of town 55 year old+ RV park for retirement age. 
+2. Donated oil field to GHA using revenue to give back to community and reinterment age people.
+3. Zero online presence. Want to build a website that describes who they are. Their projects and what they do. 
+4. pick a couple modern styles and do a mock up using their stuff. 
+5. Static website GitHub account. Build 1-2 revision based on feedback.
+6. Do research on options for hosting. 
+7. Full backend.
+8. Styling javascript most of a draft from start of schools. 
+9. Somewhere for donation 
+10. Involve community members who aren't active 
+
+Elizabeth taking photos of seniors.
+Weekly activities  
+Who do they want to recognize the most.
+
+
+-- Main Focus --
+Assisted Living 
+RV Park
+Grants 
+
+Community meals - Gunnison Senior Ressource center 
+cattles mans days 
+cresstedButte events 
+Pioneer Museum
+
+-- Need picture --
+Board of directed
+
+Make Homeowners Assiciation to 
+Home Assiaction 
+5o1c non-profit
+
+1. Hostinger (Shared Hosting)
+
+Pros:
+
+Very budget-friendly — plans starting around $2.99/month 
+Bluehost
+.
+
+Excellent speed via LiteSpeed servers, in-house caching, and global data centers 
+Bluehost
+.
+
+Free SSL, 24/7 live chat support, weekly backups, Git integration, and domain name in some plans 
+Bluehost
+.
+
+Highly praised by real users as “the cheapest but also the best” 
+Reddit
+.
+
+Cons:
+
+Renewal prices can be high.
+
+Advanced configurations may be limited for very custom backends.
+
+2. Bluehost (Shared Hosting)
+
+Pros:
+
+Trusted brand with strong integration for WordPress, recommended by WordPress.org 
+TechRadar
+.
+
+Shared hosting starting low (~$1.99/month via promo), with NVMe SSDs and good performance for small sites 
+TechRadar
+.
+
+One-click installations and AI tools for site-building.
+
+Cons:
+
+Promotional pricing jumps significantly on renewal.
+
+No uptime guarantee; support is English-only and limited 
+TechRadar
+.
+
+3. Namecheap (EasyWP or Shared Hosting)
+
+Pros:
+
+Affordable, often one of the lowest-cost options 
+TechRadar
+Tom's Guide
+.
+
+Good for static or WordPress sites; custom domain support even on EasyWP 
+TechRadar
+.
+
+Users report seamless, reliable experience for cPanel hosting 
+Reddit
+.
+
+Cons:
+
+SSL certificates may only be free for the first year; subsequent renewals (~$13/year) 
+Reddit
+.
+
+Resources and support may be basic.
+
+4. Hostinger Alternatives From the Community: Ethernet Servers / Shock Hosting
+
+Pros:
+
+Ethernet Servers: ~$3/month, free SSL, email, malware scanning, backups, LiteSpeed setup, minimal renewal hikes 
+Reddit
++1
+.
+
+Shock Hosting: Low-cost, less crowded servers yield faster performance and better support 
+Reddit
++1
+.
+
+Cons:
+
+Smaller providers — may offer limited documentation or self-serve support.
+
+5. Free Static Hosting (e.g., Netlify, GitHub Pages)
+
+Ideal if your site is purely static (no server-side logic).
+
+Pros:
+
+Completely free, easy setup, with built-in CDN and free SSL 
+Reddit
++1
+.
+
+Scales effortlessly for static content—hundreds of thousands of visits included.
+
+Cons:
+
+Not suitable if you require backend logic, databases, or dynamic features.
+
+6. Scalability-Focused Shared Hosts (SiteGround, InMotion, ScalaHosting)
+
+Pros:
+
+Provide more robust performance, faster caching, and scalable tools like SuperCacher (SiteGround), Launch Assist (InMotion), or SPanel security (ScalaHosting) 
+TechRadar
+.
+
+Great reputations for support and reliability.
+
+Cons:
+
+Higher cost—best suited for small businesses or sites expecting growth.
+
+At-a-Glance Comparison
+Provider	Best For	Highlights	Considerations
+Hostinger	Cheapest reliable option	Fast with LiteSpeed, low cost, good features	Renewal pricing
+Bluehost	WordPress beginners	Budget-focused, easy setup, AI tools	Limited support, renewal jump
+Namecheap	Domain & hosting bundle	Cheap, easy cPanel hosting	SSL renewal cost
+Ethernet Servers / Shock Hosting	Hidden-value alternatives	Very affordable, great performance and support	Smaller providers, may lack polish
+Netlify / GitHub Pages	Pure static sites	Free, CDN-backed, great for static-only sites	No dynamic backend
+SiteGround / InMotion / ScalaHosting	Growth & performance-focused	Advanced caching, support, scalability	Higher price point
+Recommendations Based on Your Needs:
+
+If you want ultra low cost, easy setup, and enough for under 100 weekly visitors: Hostinger is a top pick.
+
+If you're hosting a static site with no backend at all: Netlify or GitHub Pages give you free hosting and SSL, no fuss.
+
+If you want something affordable but reliable from the developer community: Consider Ethernet Servers or Shock Hosting.
+
+If you're planning to use WordPress and want easy scalability later: Bluehost gets you started simply, or spring for SiteGround for better performance long-term.

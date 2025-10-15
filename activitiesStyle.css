@@ -1,0 +1,267 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden; 
+  font-family: Arial, sans-serif;
+}
+
+/* NAVIGATION */
+.navLinks {
+  background-color: #811c1c;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.GHA_Logo #logo {
+  width: 50px;
+  height: auto;
+  display: block;
+}
+
+/* Hamburger Button */
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+  background: none;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s;
+}
+
+/* Center nav links (desktop) */
+.center-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+}
+
+.center-links a {
+  color: #fff;
+  padding: 14px 20px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.center-links a:hover, button:hover {
+  background-color: #db2f2f;
+}
+
+.standardButton {
+  background-color: #811c1c;
+  color: black;
+  border: 2px solid rgb(0, 0, 0);
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px; /* Rounds all corners by 10 pixels */
+}
+
+.standardButton:hover {
+  background-color: #db2f2f;
+
+}
+
+/* ABOUT IMAGE */
+#scrollImage,
+.activityImage {
+  width: 100vw;   
+  height: auto;
+  display: block;
+}
+
+#scrollImg.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.activityImage {
+  height: 50vh;
+  overflow: hidden;
+  margin-top: 0;
+  text-align: center;
+  color: #fff;
+  background: black;
+  position: relative;
+}
+
+.activityImage img {
+  opacity: 0.5;
+  width: 100vw;   
+  object-fit: cover;
+  display: block;
+}
+
+/* Overlay text */
+.imageTextMiddle {
+  position:absolute;
+  top: 50%;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+}
+
+/* Activity Objects */
+.activities {
+  position: relative;
+  width: 100%;
+  margin: 50px auto;
+  padding: 20px;
+  /* background-color: #f0f0f0;
+  border: 1px solid #ccc; */
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.object {
+  position: relative;
+  width: 40%;
+  height: 70vh;
+  margin: 50px auto;
+  /* padding: 20px; */
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  border-radius: 20px;
+  justify-content: center;
+  place-items: center;
+  
+}
+
+
+.object-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-start;
+}
+
+
+.object-img img {
+  width:100%;
+  height: auto;
+  
+}
+
+.objectText{
+  padding: 10px;
+  font-size:15px ;
+  text-align: left;
+}
+
+.activitiesButton{
+  margin: 1 1 auto;
+}
+
+/* === Footer Content === */
+.site-footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 60px;
+}
+
+.footer-content {
+  max-width: 100%;
+  margin: 1 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-logo img {
+  height: 50px;
+  width: auto;
+  float: left;
+}
+
+.footer-text {
+  font-size: 15px;
+  width: 30%;
+  float: left;
+}
+
+.footer-links {
+  display: flex;
+  text-align: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #aaa;
+}
+
+/* Footer Mobile */
+@media (max-width: 600px) {
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .footer-links {
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ======= MOBILE NAV MENU ======= */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .center-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    transform: none;
+    width: 100%;
+    background-color: #811c1c;
+    padding: 10px 0;
+  }
+
+  .center-links.show {
+    display: flex;
+  }
+
+  .center-links a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
