@@ -8,6 +8,10 @@
 body {
   background-color: rgba(0, 0, 0, 0.8);
 }
+b,p,h1{
+  font-family:'Times New Roman', Times, serif;
+  
+}
 
 html, body {
   max-width: 100%;
@@ -163,7 +167,7 @@ html, body {
 
 .right-image img, .left-image img {
   width: 100%;
-  height: auto;
+  /* height: auto; */
   
   display: block;
   border-radius: 10px;

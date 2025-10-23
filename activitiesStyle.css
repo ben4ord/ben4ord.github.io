@@ -9,6 +9,15 @@ body {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
+b,p,h1{
+  font-family:'Times New Roman', Times, serif;
+}
+h1{
+  font-size: 2vw;
+  padding: 1%;
+}
+
+
 html, body {
   max-width: 100%;
   overflow-x: hidden; 
@@ -83,7 +92,7 @@ html, body {
 
 }
 
-/* ABOUT IMAGE */
+/* Activity IMAGE */
 #scrollImage,
 .activityImage {
   width: 100vw;   
@@ -124,7 +133,8 @@ html, body {
 
 /* Activity Objects */
 .activities {
-  position: relative;
+  display: flex;
+  flex-wrap: wrap;
   width: 100%;
   margin: 50px auto;
   padding: 20px;
@@ -141,37 +151,77 @@ html, body {
   margin: 50px auto;
   /* padding: 20px; */
   background-color: #ffffff;
-  border: 1px solid #ccc;
   overflow: hidden;
   border-radius: 20px;
   justify-content: center;
-  place-items: center;
+  place-items: center; 
+  box-shadow: 10px 10px 5px #000000;
   
 }
 
 
 .object-row {
   display: flex;
-  justify-content: center;
+  flex-direction: row; /* Stack vertically */
   align-items: center;
-  align-items: flex-start;
+  width: 100vw; 
+  /* border: 1px solid #ccc; */
+  overflow: hidden;
 }
 
+.object-img {
+  width: 100%;
+  aspect-ratio: 2 / 1; /* Makes the image area twice as wide as tall (upper half look) */
+}
 
 .object-img img {
-  width:100%;
-  height: auto;
-  
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Keeps proportions and crops if needed */
 }
 
-.objectText{
+.objectText {
   padding: 10px;
-  font-size:15px ;
+  font-size: 15px;
   text-align: left;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .activitiesButton{
-  margin: 1 1 auto;
+
+  padding:1%;
+  bottom: 0;
+}
+
+/* === Mobile View === */
+@media (max-width: 768px) {
+  
+  
+  .activities {
+    flex-direction: column; /* Stack all .object divs vertically */
+    align-items: center;
+  }
+
+  .object {
+    width: 90%; /* Make objects fit nicely on small screens */
+    height: auto; /* Let height adjust to content */
+    margin: 20px 0;
+  }
+
+  .object-row {
+    flex-direction: column; /* Stack image above text */
+    width: 100%; /* Take full width of parent */
+  }
+
+  .object-img {
+    aspect-ratio: 16 / 9; /* More natural image ratio on small screens */
+  }
+
+  .objectText {
+    text-align: center; /* Center text for better mobile look */
+    font-size: medium;
+  }
 }
 
 /* === Footer Content === */
