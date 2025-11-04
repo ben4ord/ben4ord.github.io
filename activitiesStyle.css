@@ -10,7 +10,7 @@ body {
 }
 
 b,p,h1{
-  font-family:'Times New Roman', Times, serif;
+  font-family:'Times New Roman';
 }
 h1{
   font-size: 2vw;
@@ -21,7 +21,7 @@ h1{
 html, body {
   max-width: 100%;
   overflow-x: hidden; 
-  font-family: Arial, sans-serif;
+  font-family: 'Times New Roman';
 }
 
 /* NAVIGATION */
@@ -31,7 +31,7 @@ html, body {
   top: 0;
   width: 100%;
   z-index: 1000;
-
+  font-size: 1vw;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,20 +76,58 @@ html, body {
   background-color: #db2f2f;
 }
 
+/* ======= MOBILE NAV MENU ======= */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .center-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    transform: none;
+    width: 100%;
+    background-color: #811c1c;
+    padding: 10px 0;
+  }
+
+  .center-links.show {
+    display: flex;
+  }
+
+  .center-links a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+/* Shared button style (if not already defined elsewhere) */
 .standardButton {
-  background-color: #811c1c;
-  color: black;
-  border: 2px solid rgb(0, 0, 0);
-  padding: 10px 10px;
-  text-align: center;
-  text-decoration: none;
   display: inline-block;
-  border-radius: 10px; /* Rounds all corners by 10 pixels */
+  padding: 12px 25px;
+  background-color:#db2f2f;
+  color: #2c2c2c;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
 }
 
 .standardButton:hover {
-  background-color: #db2f2f;
-
+  background-color:#811c1c;
+  transform: scale(1.05);
 }
 
 /* Activity IMAGE */
@@ -117,7 +155,8 @@ html, body {
 
 .activityImage img {
   opacity: 0.5;
-  width: 100vw;   
+  width: 100%;   
+  height: 100%;
   object-fit: cover;
   display: block;
 }
@@ -128,102 +167,118 @@ html, body {
   top: 50%;
   text-align: center;
   width: 100%;
-  font-size: 20px;
+  font-size: 1.5rem;
 }
 
-/* Activity Objects */
+/* === Activities Section === */
 .activities {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
   margin: 50px auto;
   padding: 20px;
-  /* background-color: #f0f0f0;
-  border: 1px solid #ccc; */
-  overflow: hidden;
+  background-color: #2c2c2c;
   border-radius: 20px;
+  box-sizing: border-box;
 }
 
-.object {
-  position: relative;
-  width: 40%;
-  height: 70vh;
-  margin: 50px auto;
-  /* padding: 20px; */
-  background-color: #ffffff;
-  overflow: hidden;
-  border-radius: 20px;
-  justify-content: center;
-  place-items: center; 
-  box-shadow: 10px 10px 5px #000000;
-  
-}
-
-
+/* Each row contains 2 objects side-by-side */
 .object-row {
   display: flex;
-  flex-direction: row; /* Stack vertically */
-  align-items: center;
-  width: 100vw; 
-  /* border: 1px solid #ccc; */
-  overflow: hidden;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
+/* Individual activity card */
+.object {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #3a3a3a;
+  color: white;
+  border-radius: 20px;
+  width: 40%;
+  max-width: 600px;
+  min-width: 300px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+}
+
+.object:hover {
+  transform: scale(1.02);
+}
+
+/* Top image area */
 .object-img {
   width: 100%;
-  aspect-ratio: 2 / 1; /* Makes the image area twice as wide as tall (upper half look) */
+  height: 50%; /* upper half look */
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
 }
 
 .object-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Keeps proportions and crops if needed */
+  object-fit: cover;
 }
 
+/* Text content area */
 .objectText {
-  padding: 10px;
-  font-size: 15px;
+  padding: 20px;
+  font-size: 1rem;
   text-align: left;
-  width: 100%;
-  box-sizing: border-box;
 }
 
-.activitiesButton{
+.objectText h1 {
+  font-size: 1.5rem;
+  color:#db2f2f;
+  margin-bottom: 10px;
+}
+.objectText b {
+  
+  font-size: 1.25rem;
 
-  padding:1%;
-  bottom: 0;
 }
 
-/* === Mobile View === */
+/* Button container */
+.activitiesButton {
+  text-align: center;
+  padding: 20px;
+  margin-top: auto;
+}
+
+
+/* === Responsive === */
+@media (max-width: 1024px) {
+  .object {
+    width: 45%;
+  }
+}
+
 @media (max-width: 768px) {
-  
-  
-  .activities {
-    flex-direction: column; /* Stack all .object divs vertically */
+  .object-row {
+    flex-direction: column;
     align-items: center;
   }
 
   .object {
-    width: 90%; /* Make objects fit nicely on small screens */
-    height: auto; /* Let height adjust to content */
-    margin: 20px 0;
-  }
-
-  .object-row {
-    flex-direction: column; /* Stack image above text */
-    width: 100%; /* Take full width of parent */
-  }
-
-  .object-img {
-    aspect-ratio: 16 / 9; /* More natural image ratio on small screens */
+    width: 90%;
+    height: auto;
   }
 
   .objectText {
-    text-align: center; /* Center text for better mobile look */
-    font-size: medium;
+    text-align: center;
+  }
+
+  .objectText h1 {
+    font-size: 1.3rem;
   }
 }
-
 /* === Footer Content === */
 .site-footer {
   background-color: #000;
@@ -282,36 +337,3 @@ html, body {
   }
 }
 
-/* ======= MOBILE NAV MENU ======= */
-@media (max-width: 768px) {
-  .navLinks {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .center-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: static;
-    transform: none;
-    width: 100%;
-    background-color: #811c1c;
-    padding: 10px 0;
-  }
-
-  .center-links.show {
-    display: flex;
-  }
-
-  .center-links a {
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
