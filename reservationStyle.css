@@ -241,7 +241,7 @@ html, body {
 .amenitiesText h1 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color:#db2f2f; /* gold accent */
+  color:#811c1c; /* gold accent */
   letter-spacing: 2px;
   text-transform: uppercase;
 }

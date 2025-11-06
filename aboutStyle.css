@@ -163,6 +163,158 @@ html, body {
   width: 100%;
   font-size: 20px;
 }
+
+/* === About Content (Objective, Mission, History) === */
+
+.mission-objective-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+  width: 90%;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.objective-obj, .mission-obj {
+  flex: 1;
+  min-width: 350px;
+  padding: 20px;
+  background-color: #858585;
+  overflow: hidden;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.objective-text b, .mission-text b {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* Optional: make headings pop a bit */
+.objective-text h1, .mission-text h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+}
+
+/* Responsive tweak for smaller screens */
+@media (max-width: 800px) {
+  .mission-objective-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* === Second History (slide show) === */
+.history-obj {
+  text-align: center;
+  margin: 2rem auto;
+  width: 95%;           /* slightly wider overall */
+  max-width: 1200px;    /* allow for bigger boxes */
+  font-family: Arial, sans-serif;
+}
+
+.history-header {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.history-header-ext {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  text-align: center;
+  margin: 2rem auto;
+}
+
+.history-slides {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position: relative;
+  gap: 1.5rem;           /* spacing between the boxes */
+}
+
+.prev, .next {
+  cursor: pointer;
+  font-size: 2.5rem;     /* slightly larger arrows */
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  user-select: none;
+  transition: color 0.3s;
+  align-self: center;
+}
+
+.prev:hover, .next:hover {
+  color: #0077cc;
+}
+
+.year-obj-1, .year-obj-2, .year-obj-3 {
+  flex: 1;
+  margin: 0 0.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f7f7f7;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  padding: 1.5rem;
+  min-height: 480px;
+  max-height: 480px;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.year-obj-1:hover,
+.year-obj-2:hover,
+.year-obj-3:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+}
+
+.year-obj-1 p.year,
+.year-obj-2 p.year,
+.year-obj-3 p.year {
+  font-weight: bold;
+  font-size: 1.4rem;     
+  margin-bottom: 0.5rem;
+}
+
+.historyImg {
+  width: 100%;
+  height: 220px;         
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.historyBlurb {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+}
+
+/* Optional: responsive stacking on small screens */
+@media (max-width: 768px) {
+  .history-slides {
+    flex-direction: column;
+  }
+
+  .prev, .next {
+    position: static;
+    margin: 0.5rem 0;
+  }
+
+  .year-obj-1, .year-obj-2, .year-obj-3 {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+
+
+/* === first history === */
 .history {
   position: relative;
   width: 80%;
