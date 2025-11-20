@@ -1,4 +1,6 @@
-
+document.addEventListener("DOMContentLoaded", function() {
+    document.body.classList.add("fade-in");
+});
 // toggle links off on on for mobile or small screened devices
 function toggleMenu() {
   const menu = document.querySelector('.center-links');
@@ -76,109 +78,136 @@ function showResSlides(n) {
 }
 
 
-//History slideshow content 
-window.addEventListener("DOMContentLoaded", () => {
-  loadHistory();
-});
-// if (window.location.pathname.includes("about.html")) {
-//   loadHistory();
-// }
-let historyOne;
-let historyTwo;
-let historyThree;
+// History slideshow
+window.addEventListener("DOMContentLoaded", loadHistory);
+
+let historyData = [];
 let historyIndex = 0;
-let historyData;
-let historyLength;
+let historyLength = 0;
 
-let contentOne;
-let yearOne;
-let imgOne;
-let blurbOne;
-
-let contentTwo; 
-let yearTwo; 
-let imgTwo;
-let blurbTwo;
-
-let contentThree;
-let yearThree;
-let imgThree; 
-let blurbThree;
+// Array to store the 3 slide DOM objects
+const slides = [];
 
 function loadHistory() {
-
-  contentOne = document.getElementsByClassName("year-obj-1")[0];
-  yearOne = contentOne.querySelector(".year");
-  imgOne = contentOne.querySelector(".historyImg");
-  blurbOne = contentOne.querySelector(".historyBlurb");
-
-  contentTwo = document.getElementsByClassName("year-obj-2")[0];
-  yearTwo = contentTwo.querySelector(".year");
-  imgTwo = contentTwo.querySelector(".historyImg");
-  blurbTwo = contentTwo.querySelector(".historyBlurb");
-
-  contentThree = document.getElementsByClassName("year-obj-3")[0];
-  yearThree = contentThree.querySelector(".year");
-  imgThree = contentThree.querySelector(".historyImg");
-  blurbThree = contentThree.querySelector(".historyBlurb");
+  // Collect the 3 display objects
+  for (let i = 1; i <= 3; i++) {
+    const container = document.querySelector(`.year-obj-${i}`);
+    slides.push({
+      year: container.querySelector(".year"),
+      img: container.querySelector(".historyImg"),
+      blurb: container.querySelector(".historyBlurb")
+    });
+  }
 
   fetch("history.json")
-    .then(response => response.json())
+    .then(res => res.json())
     .then(data => {
       historyData = data.history;
-      historyOne = data.history[0];
-      historyTwo = data.history[1];
-      historyThree = data.history[2];
-      historyLength = data.history.length;
-
-      yearOne.textContent = historyOne.year;
-      imgOne.src = historyOne.image;
-      blurbOne.textContent = historyOne.blurb;
-
-      yearTwo.textContent = historyTwo.year;
-      imgTwo.src = historyTwo.image;
-      blurbTwo.textContent = historyTwo.blurb;
-
-      yearThree.textContent = historyThree.year;
-      imgThree.src = historyThree.image;
-      blurbThree.textContent = historyThree.blurb;
+      historyLength = historyData.length;
+      updateSlides(0);
     });
 }
 
 function plusHisSlides(n) {
   historyIndex += n;
-  if(historyIndex < 0){historyIndex = 0;}
-  if(historyIndex > historyLength-3){historyIndex = historyLength -3;}
-  updateHisSlides(historyIndex);
+
+  // Clamp the index
+  if (historyIndex < 0) historyIndex = 0;
+  if (historyIndex > historyLength - 3) historyIndex = historyLength - 3;
+
+  updateSlides(historyIndex);
 }
 
-function updateHisSlides(n) {
-  // console.log(historyLength);
-  // console.log(n);
+function updateSlides(index) {
+  // Ensure valid range
+  if (index < 0) index = 0;
+  if (index > historyLength - 3) index = historyLength - 3;
 
- // guard clause: wrap around if we reach the end
-  if (n < 0){ n = 0;}
-  if (n + 2 >= historyLength) {n = historyLength - 3;}
-
-  // only continue if we have enough entries
-  if (n < historyLength - 2) {
-    // get the current 3 entries dynamically
-    const historyOne = historyData[n];
-    const historyTwo = historyData[n + 1];
-    const historyThree = historyData[n + 2];
-
-    // update DOM
-    yearOne.textContent = historyOne.year;
-    imgOne.src = historyOne.image;
-    blurbOne.textContent = historyOne.blurb;
-
-    yearTwo.textContent = historyTwo.year;
-    imgTwo.src = historyTwo.image;
-    blurbTwo.textContent = historyTwo.blurb;
-
-    yearThree.textContent = historyThree.year;
-    imgThree.src = historyThree.image;
-    blurbThree.textContent = historyThree.blurb;
+  // Update the 3 display slots using a loop
+  for (let i = 0; i < 3; i++) {
+    const entry = historyData[index + i];
+    slides[i].year.textContent = entry.year;
+    slides[i].img.src = entry.image;
+    slides[i].blurb.textContent = entry.blurb;
+  }
 }
-  
+
+
+// === Grant Slideshow ===
+window.addEventListener("DOMContentLoaded", loadGrants);
+
+let grantData = [];
+let grantIndex = 0;
+let grantLength = 0;
+
+// Store references to the 3 slide DOM objects
+const grantSlides = [];
+
+function loadGrants() {
+  // Load DOM slide containers
+  for (let i = 1; i <= 3; i++) {
+    const container = document.querySelector(`.grant-obj-${i}`);
+    grantSlides.push({
+      year: container.querySelector(".grant-year"),
+      img: container.querySelector(".grantImg"),
+      blurb: container.querySelector(".grantBlurb")
+    });
+  }
+
+  // Load JSON
+  fetch("grants.json")
+    .then(res => res.json())
+    .then(data => {
+      grantData = data.grants;
+      grantLength = grantData.length;
+      updateGrantSlides(0);
+    });
 }
+
+function plusGrantSlides(n) {
+  grantIndex += n;
+
+  // Clamp index
+  if (grantIndex < 0) grantIndex = 0;
+  if (grantIndex > grantLength - 3) grantIndex = grantLength - 3;
+
+  updateGrantSlides(grantIndex);
+}
+
+function updateGrantSlides(index) {
+  // Ensure valid range
+  if (index < 0) index = 0;
+  if (index > grantLength - 3) index = grantLength - 3;
+
+  // Loop through the 3 visible slides
+  for (let i = 0; i < 3; i++) {
+    const entry = grantData[index + i];
+    grantSlides[i].year.textContent = entry.year;
+    grantSlides[i].img.src = entry.image;
+    grantSlides[i].blurb.textContent = entry.blurb;
+  }
+}
+
+// Grant Info Download //
+
+document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("downloadBtn").addEventListener("click", () => {
+
+        const files = [
+            "grantFiles/Grant Guidelines.pdf",
+            "grantFiles/Grant Request Form.pdf"
+        ];
+
+        files.forEach((file, i) => {
+            setTimeout(() => {
+                const a = document.createElement("a");
+                a.href = file;
+                a.download = file.split("/").pop();
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            }, i * 300);
+        });
+
+    });
+});
