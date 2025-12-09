@@ -91,41 +91,6 @@ html, body {
 
 }
 
-/* ======= MOBILE NAV MENU ======= */
-@media (max-width: 768px) {
-  .navLinks {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .center-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: static;
-    transform: none;
-    width: 100%;
-    background-color: #228B22;
-    padding: 10px 0;
-  }
-
-  .center-links.show {
-    display: flex;
-  }
-
-  .center-links a {
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 3vw;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
 /* === Drop Down ===*/
 
 /* The dropdown container */
@@ -136,7 +101,7 @@ html, body {
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 1rem;
+  font-size: 1vw;
   border: none;
   outline: none;
   color: white;
@@ -180,8 +145,51 @@ html, body {
   display: block;
 }
 
+/* ======= MOBILE NAV MENU ======= */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
-/* ABOUT IMAGE */
+  .center-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    transform: none;
+    width: 100%;
+    background-color: #228B22;
+    padding: 10px 0;
+  }
+
+  .center-links.show {
+    display: flex;
+  }
+
+  .center-links a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: clamp(14px, 3.5vw, 20px);
+    color: white;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-family: inherit;
+  }
+}
+
+/* === GRANT IMAGE ===*/
 #scrollImage,
 .aboutImage {
   width: 100%;   
@@ -194,7 +202,7 @@ html, body {
   pointer-events: none;
 }
 
-.aboutImage {
+.grantImage {
   height: 50vh;
   overflow: hidden;
   margin-top: 0;
@@ -204,7 +212,7 @@ html, body {
   position: relative;
 }
 
-.aboutImage img {
+.grantImage img {
   opacity: 0.5;
   width: 100%;   
   height: 100%;
@@ -221,9 +229,9 @@ html, body {
   font-size: 20px;
 }
 
-/* === About Content (Objective, Mission, History) === */
+/* === Grant Info (Overview & Eligibility) == */
 
-.mission-objective-container {
+.overview-eligibility-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -234,32 +242,32 @@ html, body {
   flex-direction: column;
 }
 
-.objective-obj, .mission-obj {
+.overview-obj, .eligibility-obj {
   flex:1;
   min-width: 350px;
   padding: 20px;
-  background-color: #2c2c2c;
+  background-color: #858585;
   overflow: hidden;
   border-radius: 5px;
   color: #fff;
   box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
 
-.objective-text b, .mission-text b {
+.overview-text b, .eligibility-text b {
   font-size: 1.2rem;
   line-height: 1.5;
 }
 
-/* Optional: make headings pop a bit */
-.objective-text h1, .mission-text h1 {
+/* make headings pop a bit */
+.overview-text h1, .eligibility-text h1 {
   margin-bottom: 0.5rem;
   font-size: 1.8rem;
 }
 
 .downloadGrantInfo {
     display: flex;
-    flex-direction: column; /* Stack H1 above button */
-    align-items: center;    /* Center horizontally */
+    flex-direction: column; 
+    align-items: center;    
     padding: 1%;
 }
 
@@ -272,23 +280,48 @@ html, body {
 }
 
 
-/* Text content area */
-.boardText {
-  padding: 20px;
-  font-size: 1rem;
-  text-align: left;
+/* === Approved Grants & Donations === */
+.approvedGrantsDonations{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  align-items: stretch;
+  background-color: #ffffff;
+  border-radius: 20px;
+  /* width: 50vw; */
+  max-width: 50vw;
+  min-width: 300px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease;
+  margin: 2rem auto;
+  padding: 2%;
 }
 
-.boardText h1 {
-  font-size: 1.5rem;
-  color:#228B22;
-  margin-bottom: 10px;
+.approvedGrantsDonations h1{
+  font-size: 2vw;
+  list-style: none;
 }
-.boardText b {
-  
-  font-size: 1.25rem;
+.approvedGrantsDonations li{
+  font-size: 1.5vw;
+  list-style-type:none;
+  padding: 2%;
+}
 
+@media(max-width:768px){
+  .approvedGrantsDonations{
+    max-width: fit-content;
+  }
+
+  .approvedGrantsDonations h1{
+    font-size: 4vw;
+    list-style: none;
+  }
+  .approvedGrantsDonations li{
+    font-size: 3vw;
+  }
 }
+
 
 /* === Grant Slideshow === */
 .grants-obj {
@@ -318,7 +351,7 @@ html, body {
   cursor: pointer;
   font-size: 2.5rem;
   font-weight: bold;
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
   padding: 0.5rem 1rem;
   user-select: none;
@@ -365,7 +398,7 @@ html, body {
 .grantImg {
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 10px;
   margin-bottom: 1rem;
 }
@@ -388,6 +421,7 @@ html, body {
   .grants-slides {
     flex-direction: column;
   }
+  
 
   .prev, .next {
     position: static;

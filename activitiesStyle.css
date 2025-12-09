@@ -76,40 +76,6 @@ html, body {
   background-color: #78fa2c;
 }
 
-/* ======= MOBILE NAV MENU ======= */
-@media (max-width: 768px) {
-  .navLinks {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .center-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: static;
-    transform: none;
-    width: 100%;
-    background-color: #228B22;
-    padding: 10px 0;
-  }
-
-  .center-links.show {
-    display: flex;
-  }
-
-  .center-links a {
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 3vw;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
 
 /* === Drop Down ===*/
 
@@ -121,7 +87,7 @@ html, body {
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 1rem;
+  font-size: 1vw;
   border: none;
   outline: none;
   color: white;
@@ -165,6 +131,50 @@ html, body {
   display: block;
 }
 
+
+/* ======= MOBILE NAV MENU ======= */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .center-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    transform: none;
+    width: 100%;
+    background-color: #228B22;
+    padding: 10px 0;
+  }
+
+  .center-links.show {
+    display: flex;
+  }
+
+  .center-links a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+  }
+
+  .hamburger {
+    display: block;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: clamp(14px, 3.5vw, 20px);
+    color: white;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-family: inherit;
+  }
+}
 /* Shared button style */
 .standardButton {
   display: inline-block;
@@ -265,6 +275,7 @@ html, body {
 }
 
 .object-img {
+  position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
@@ -297,6 +308,18 @@ html, body {
   text-align: center;
   padding: 20px;
   margin-top: auto;
+}
+
+.credit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  padding: 3px 8px;
+  font-size: 12px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  border-radius: 5px;
+  pointer-events: none; /* ensures it doesn’t block clicks */
 }
 
 

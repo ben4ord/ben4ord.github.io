@@ -1,59 +1,70 @@
 {
   "grants": [
     {
-      "year": 2021,
+      "amount": "$10,000",
       "image": "grantFiles/photos/IMG_3035.jpg",
-      "blurb": "Six Points Payment for un-reimbursed medical and travel expenses for Seniors."
+      "blurb": "Support for Six Points, helping cover un-reimbursed medical and travel expenses for seniors who need extra assistance. This funding ensures that essential care and necessary appointments remain accessible for those with limited means."
     },
     {
-      "year": 2021,
+      "amount": "$2 Million",
       "image": "grantFiles/photos/IMG_2963.jpg",
-      "blurb": "Assisted Living—original construction by GHA. Replacement of fire suppression system and funding for a monthly meal out."
+      "blurb": "Long-term investment in Assisted Living, including the original construction funded by GHA. Recent grants supported the replacement of the fire suppression system and also provide seniors with a monthly meal out, offering both safety and community connection."
     },
     {
-      "year": 2022,
+      "amount": "$15,000",
       "image": "grantFiles/photos/IMG_3022.jpg",
-      "blurb": "Grants for food assistance for Seniors."
+      "blurb": "Funding dedicated to food assistance programs for seniors, helping ensure that community members in need have consistent access to nutritious meals throughout the year."
     },
     {
-      "year": 2022,
+      "amount": "$12,100",
       "image": "grantFiles/photos/IMG_3032.jpg",
-      "blurb": "Gunnison Valley Animal Welfare League (GVAWL) Pet adoptions for Seniors "
+      "blurb": "Support for the Gunnison Valley Animal Welfare League (GVAWL), helping cover adoption fees so seniors can welcome a companion animal into their homes—providing comfort, joy, and companionship."
     },
     {
-      "year": 2023,
+      "amount": "$10,000",
+      "image": "grantFiles/photos/GVHEAT.jpg",
+      "blurb": "Support for the Gunnison Seniors to help reduce their energy costs and make their homes safe, livable, and affordable."
+    },
+    {
+      "amount": "$xx,xxx",
       "image": "grantFiles/photos/IMG_3042.jpg",
-      "blurb": "Creation of a Senior wing at the Ann Zugelder Gunnison Library."
+      "blurb": "Funding to help create a dedicated senior wing at the Ann Zugelder Gunnison Library, offering a welcoming space for reading, learning, and community programs specifically geared toward older residents."
     },
     {
-      "year": 2024,
+      "amount": "",
       "image": "grantFiles/photos/originalBuilding.jpg",
-      "blurb": "Grants for up keep of Original Health Care Center built and managed by the Gunnison Home Association."
+      "blurb": "Ongoing support for upkeep and maintenance of the Original Health Care Center, a facility built and historically managed by the Gunnison Home Association to serve the needs of the community’s seniors."
     },
     {
-      "year": 2024,
+      "amount": "$7,000",
       "image": "grantFiles/photos/IMG_0421.jpg",
-      "blurb": "Funding for Gunnison Arts Center ramp for handicap access."
+      "blurb": "Funding provided to the Gunnison Arts Center for the installation of an accessible ramp, improving mobility and ensuring all visitors can comfortably enjoy community arts programs."
     },
     {
-      "year": 2024,
+      "amount": "$8,000",
       "image": "grantFiles/photos/IMG_0422.jpg",
-      "blurb": "Grant for accessible ramp and a golf cart at the Pioneer Museum."
+      "blurb": "Grant supporting the addition of an accessible ramp and a golf cart for transportation at the Pioneer Museum, enhancing accessibility for seniors and visitors with mobility challenges."
     },
     {
-      "year": 2024,
+      "amount": "$8,000",
       "image": "grantFiles/photos/IMG_0426.jpg",
-      "blurb": "Funding for American Legion accessible ramp"
+      "blurb": "Support for the American Legion to install an accessible ramp, helping make community events and services available to seniors and individuals with mobility needs."
     },
     {
-      "year": 2024,
+      "amount": "$8,000",
       "image": "grantFiles/photos/IMG_0427.jpg",
-      "blurb": "Grant awarded to American Legion for the creation of a accessible patio."
+      "blurb": "Grant awarded to the American Legion for the construction of an accessible outdoor patio—creating a welcoming, inclusive gathering space for members and the greater community."
     },
     {
-      "year": 2024,
+      "amount": "$1,000",
       "image": "grantFiles/photos/IMG_0480.jpg",
-      "blurb": "Funding for a monthly meal out."
+      "blurb": "Funding dedicated to providing seniors with a monthly meal out, giving residents an opportunity to socialize, dine together, and enjoy time out in the community."
+      
+    },
+    {
+      "amount": "$1,280",
+      "image": "grantFiles/photos/mountainRoots.jpg",
+      "blurb": "Donation for Mountain Roots to support providing nutritious produce across the Gunnison valley and western Colorado. From free boxes of produce to creating community in their gardens."
     }
   ]
 }

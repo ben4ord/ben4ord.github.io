@@ -8,13 +8,15 @@ function toggleMenu() {
   menu.classList.toggle('show');
 }
 
+
+//====== Resource Slide Show ======//
 // Wait for page to load before getting elements
 // for slide show on homepage 
 window.addEventListener("DOMContentLoaded", () => {
   let slideIndex = 0;
   const slide = document.getElementById("slidesImg");
 
-  fetch('images.json')
+  fetch('resourceImages.json')
     .then(response => response.json())
     .then(data => {
       const images = data.images;
@@ -36,6 +38,8 @@ window.addEventListener("DOMContentLoaded", () => {
     .catch(err => console.error("Error Loading image:", err));
 });
 
+
+//================ Reservation Slide Show =============//
 // Wait for page to load before getting elements
 // for slide Reservation slide show
 let slide ;
@@ -50,7 +54,7 @@ window.addEventListener("DOMContentLoaded", () => {
     .then(response => response.json())
     .then(data => {
       images = data.images;
-      
+      slide.src = images[0];
     })
     .catch(err => console.error("Error Loading image:", err));
 });
@@ -65,12 +69,10 @@ function showResSlides(n) {
   if (n > images.length){
     resSlideIndex = 1;
    
-
   }
   if (n < 1){
     resSlideIndex = images.length;
     
-
   }
   console.log(resSlideIndex);
   slide.src = images[resSlideIndex-1];
@@ -78,7 +80,7 @@ function showResSlides(n) {
 }
 
 
-// History slideshow
+// ========== History Slideshow ============//
 window.addEventListener("DOMContentLoaded", loadHistory);
 
 let historyData = [];
@@ -148,7 +150,7 @@ function loadGrants() {
   for (let i = 1; i <= 3; i++) {
     const container = document.querySelector(`.grant-obj-${i}`);
     grantSlides.push({
-      year: container.querySelector(".grant-year"),
+      amount: container.querySelector(".grant-amount"),
       img: container.querySelector(".grantImg"),
       blurb: container.querySelector(".grantBlurb")
     });
@@ -182,16 +184,23 @@ function updateGrantSlides(index) {
   // Loop through the 3 visible slides
   for (let i = 0; i < 3; i++) {
     const entry = grantData[index + i];
-    grantSlides[i].year.textContent = entry.year;
+    grantSlides[i].amount.textContent = entry.amount;
     grantSlides[i].img.src = entry.image;
     grantSlides[i].blurb.textContent = entry.blurb;
   }
 }
 
 // Grant Info Download //
-
 document.addEventListener("DOMContentLoaded", () => {
-    document.getElementById("downloadBtn").addEventListener("click", () => {
+    const downloadBtn = document.getElementById("downloadBtn");
+    let isCooldown = false;   // prevents spamming
+
+    downloadBtn.addEventListener("click", () => {
+        if (isCooldown) return;  // block multiple clicks
+
+        isCooldown = true;
+        downloadBtn.disabled = true;            // disable button
+        downloadBtn.textContent = "Preparing...";
 
         const files = [
             "grantFiles/Grant Guidelines.pdf",
@@ -209,5 +218,11 @@ document.addEventListener("DOMContentLoaded", () => {
             }, i * 300);
         });
 
+        // Re-enable download button after 3 seconds
+        setTimeout(() => {
+            downloadBtn.disabled = false;
+            downloadBtn.textContent = "Download";
+            isCooldown = false;
+        }, 3000);
     });
 });

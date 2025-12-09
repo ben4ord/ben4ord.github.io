@@ -94,41 +94,6 @@ html, body {
 
 }
 
-/* ======= MOBILE NAV MENU ======= */
-@media (max-width: 768px) {
-  .navLinks {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .center-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: static;
-    transform: none;
-    width: 100%;
-    background-color: #228B22;
-    padding: 10px 0;
-  }
-
-  .center-links.show {
-    display: flex;
-  }
-
-  .center-links a {
-    padding: 10px;
-    width: 100%;
-    text-align: center;
-    font-size: 3vw;
-
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
 
 /* === Drop Down ===*/
 
@@ -140,7 +105,7 @@ html, body {
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  font-size: 1rem;
+  font-size: 1vw;
   border: none;
   outline: none;
   color: white;
@@ -184,6 +149,51 @@ html, body {
   display: block;
 }
 
+/* ======= MOBILE NAV MENU ======= */
+@media (max-width: 768px) {
+  .navLinks {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .center-links {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    position: static;
+    transform: none;
+    width: 100%;
+    background-color: #228B22;
+    padding: 10px 0;
+  }
+
+  .center-links.show {
+    display: flex;
+  }
+
+  .center-links a {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    font-size: 3vw;
+
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown .dropbtn {
+    font-size: clamp(14px, 3.5vw, 20px);
+    color: white;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    font-family: inherit;
+  }
+}
+
 /* === Reservation IMAGE === */
 #scrollImage,
 .ReservationImage {
@@ -198,7 +208,7 @@ html, body {
 }
 
 .ReservationImage {
-  height: 50vh;
+  height: 70vh;
   overflow: hidden;
   margin-top: 0;
   text-align: center;
@@ -208,7 +218,7 @@ html, body {
 }
 
 .ReservationImage img {
-  opacity: 0.5;
+  opacity: 0.75;
   width: 100%;   
   height: 100%;
   object-fit: cover;
@@ -223,6 +233,19 @@ html, body {
   width: 100%;
   font-size: 1.5rem;
 }
+
+.credit {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  padding: 3px 8px;
+  font-size: 15px;
+  color: white;
+  background: rgba(0,0,0,0.6);
+  border-radius: 5px;
+  
+}
+
 
 /* === RESERVATION CONTENT === */
 .resContentOne, .resContentTwo, .resContentThree {
