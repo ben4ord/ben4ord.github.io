@@ -6,11 +6,6 @@
       "blurb": "Support for Six Points, helping cover un-reimbursed medical and travel expenses for seniors who need extra assistance. This funding ensures that essential care and necessary appointments remain accessible for those with limited means."
     },
     {
-      "amount": "$2 Million",
-      "image": "grantFiles/photos/IMG_2963.jpg",
-      "blurb": "Long-term investment in Assisted Living, including the original construction funded by GHA. Recent grants supported the replacement of the fire suppression system and also provide seniors with a monthly meal out, offering both safety and community connection."
-    },
-    {
       "amount": "$15,000",
       "image": "grantFiles/photos/IMG_3022.jpg",
       "blurb": "Funding dedicated to food assistance programs for seniors, helping ensure that community members in need have consistent access to nutritious meals throughout the year."
@@ -34,6 +29,11 @@
       "amount": "",
       "image": "grantFiles/photos/originalBuilding.jpg",
       "blurb": "Ongoing support for upkeep and maintenance of the Original Health Care Center, a facility built and historically managed by the Gunnison Home Association to serve the needs of the community’s seniors."
+    },
+    {
+      "amount": "",
+      "image": "grantFiles/photos/IMG_2963.jpg",
+      "blurb": "Long-term investment in Assisted Living, including the original construction funded by GHA. Recent grants supported the replacement of the fire suppression system and also provide seniors with a monthly meal out, offering both safety and community connection."
     },
     {
       "amount": "$172,000",
