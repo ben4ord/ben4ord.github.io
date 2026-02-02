@@ -67,12 +67,15 @@
     <div class="downloadGrantInfo">
         <h1>Download Grant Info As PDF</h1>
         <ul>
-          <li>Grant Guidelines</li>
-          <li>Grant Application Form</li>
+          <li>Grant Guidelines<br>        
+          <button class="standardButton downloadBtn" data-download="guidelines" onclick="downloadPDF(this)">Download Grant Guidelines PDF</button></li>
+
+          <li>Grant Application Form<br>
+            <button class="standardButton downloadBtn" data-download='application'  onclick="downloadPDF(this)">Download Grant Application PDF</button></li>
         </ul>
-        <button class="standardButton" id="downloadBtn">Download PDF</button>
+  
     </div>
-    </div>
+  </div>
 
   <div class="approvedGrantsDonations">
     <h1>Total Donations & Grants 2021-2025</h1>

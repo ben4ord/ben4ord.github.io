@@ -190,39 +190,40 @@ function updateGrantSlides(index) {
   }
 }
 
+
 // Grant Info Download //
-document.addEventListener("DOMContentLoaded", () => {
-    const downloadBtn = document.getElementById("downloadBtn");
-    let isCooldown = false;   // prevents spamming
+function downloadPDF(button) {
+  if (button.dataset.cooldown === "true") return;
 
-    downloadBtn.addEventListener("click", () => {
-        if (isCooldown) return;  // block multiple clicks
+  const type = button.dataset.download;
 
-        isCooldown = true;
-        downloadBtn.disabled = true;            // disable button
-        downloadBtn.textContent = "Preparing...";
+  const files = {
+    guidelines: "grantFiles/Grant Guidelines.pdf",
+    application: "grantFiles/Grant Application Form.pdf"
+  };
 
-        const files = [
-            "grantFiles/Grant Guidelines.pdf",
-            "grantFiles/Grant Request Form.pdf"
-        ];
+  const path = files[type];
+  if (!path) return;
 
-        files.forEach((file, i) => {
-            setTimeout(() => {
-                const a = document.createElement("a");
-                a.href = file;
-                a.download = file.split("/").pop();
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-            }, i * 300);
-        });
+  // start cooldown
+  button.dataset.cooldown = "true";
+  button.disabled = true;
+  const originalText = button.textContent;
+  button.textContent = "Preparing...";
 
-        // Re-enable download button after 3 seconds
-        setTimeout(() => {
-            downloadBtn.disabled = false;
-            downloadBtn.textContent = "Download";
-            isCooldown = false;
-        }, 3000);
-    });
-});
+  setTimeout(() => {
+    const a = document.createElement("a");
+    a.href = path;
+    a.download = path.split("/").pop();
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }, 300);
+
+  // re-enable after cooldown
+  setTimeout(() => {
+    button.disabled = false;
+    button.textContent = originalText;
+    delete button.dataset.cooldown;
+  }, 3000);
+}
